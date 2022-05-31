@@ -1,14 +1,18 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 
-const Product = ({ product }) => {
+const Product = ({ props }) => {
+
   return (
     <Card className='my-3 p3 rounded'>
-      <a href={`/product/${product._id}`}>
-        <Card.Img src={product.image} variant='top' />
+      <a href={`/product/${props.product._id}`}>
+        <Card.Img src={props.product} variant='top' />
       </a>
       <Card.Body>
-      <a href={`/product/${product._id}`}>
+      <a href={`/product/${props.product.image}`}>
+        <Card.Title as='div'>
+          <strong>{props.product.name}</strong>
+        </Card.Title>
       </a>
       </Card.Body>
     </Card>
