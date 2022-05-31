@@ -1,19 +1,22 @@
-import React from "react";
+import { useEffect } from "react";
 import { Card } from "react-bootstrap";
 
-const Product = (props) => {
-
+const Product = ({ product }) => {
+ useEffect(() => {
+   console.log('this is ', product)
+ })
   return (
     <Card className='my-3 p3 rounded'>
-      <a href={`/product/${props.product._id}`}>
-        <Card.Img src={props.product} variant='top' />
-      </a>
+      {/* <a href={`/product/${product}`}> */}
+        {/* <Card.Img src={product.image} variant='top' /> */}
+
+
       <Card.Body>
-      <a href={`/product/${props.product.image}`}>
+      {/* <a href={`/product/${product._id}`}>
         <Card.Title as='div'>
-          <strong>{props.product.name}</strong>
+          <strong>{product.name}</strong>
         </Card.Title>
-      </a>
+      </a> */}
       </Card.Body>
     </Card>
 
