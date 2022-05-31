@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 
-const Product = ({ props }) => {
+const Product = (props) => {
 
   return (
     <Card className='my-3 p3 rounded'>
