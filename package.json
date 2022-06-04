@@ -1,0 +1,22 @@
+{
+  "name": "supershop",
+  "version": "1.0.0",
+  "description": "SuperShop e-commerce project utilizing Full Stack Tools",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndersBau/supershop.git"
+  },
+  "author": "Anderson Bautista",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndersBau/supershop/issues"
+  },
+  "homepage": "https://github.com/AndersBau/supershop#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
