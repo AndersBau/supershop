@@ -1,13 +1,13 @@
 const express = require('express')
 const products = require('./data/products')
 const app = express()
-products
+
 app.get('/', (req, res, next) => {
   res.send('API is running')
 })
 
 app.get('/products', (req, res, next) => {
-  res.json(product)
+  res.json(products)
 })
 
 app.get('/product/:id', (req, res, next) => {
