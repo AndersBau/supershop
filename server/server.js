@@ -1,8 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import products from './data/products.js';
+import connectDB from './db/db.js'
 
 dotenv.config();
+
+connectDB();
+
 const app = express()
 
 app.get('/', (req, res, next) => {
