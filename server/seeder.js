@@ -26,8 +26,30 @@ const importData = async () => {
     });
     await Product.insertMany(sampleProducts);
 
-    console.log('Data Imported!')
+    console.log('Data Imported!');
+    process.exit(1);
   } catch (error) {
-      console.error(`${error}`)
+      console.error(`${error}`);
+      process.exit(1);
   }
+}
+
+const deleteData = async () => {
+  try {
+    await Order.deleteMany();
+    await Product.deleteMany();
+    await User.deleteMany();
+
+    console.log('Data Deleted!');
+    process.exit(1);
+  } catch (error) {
+      console.error(`${error}`);
+      process.exit(1);
+  }
+}
+
+if(process.argv[2] === '-d') {
+  deleteData();
+} else {
+  importData();
 }
