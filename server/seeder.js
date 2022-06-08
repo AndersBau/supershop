@@ -1,15 +1,15 @@
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
-import users from "./data/users";
-import products from "./data/products";
+import users from "./data/users.js";
+import products from "./data/products.js";
 import User from './db/models/userModel.js'
 import Product from './db/models/productModel.js'
 import Order from './db/models/orderModel.js'
-import connectDB from "./db/db";
+import connectDB from "./db/db.js";
 
 dotenv.config();
 
-connectDB();
+await connectDB();
 
 const importData = async () => {
   try {
@@ -21,7 +21,7 @@ const importData = async () => {
 
     const adminUser = createdUsers[0]._id;
 
-    const sampleProducts = Products.map((product) => {
+    const sampleProducts = products.map((product) => {
       return {...product, user: adminUser }
     });
     await Product.insertMany(sampleProducts);
