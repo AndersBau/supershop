@@ -2,11 +2,11 @@ import React, {useEffect, useState} from "react";
 import { Link, useParams } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Card, Button, ListGroupItem } from "react-bootstrap";
 import Rating from "../components/Rating";
-import products from "../products";
+// import products from "../products";
 import axios from "axios";
 const ProductScreen = ()=> {
   const params = useParams();
-  const product = products.find(p => p._id === params.id);
+  // const product = products.find(p => p._id === params.id);
   const [product, setProduct] = useState([]);
 
   useEffect(() => {

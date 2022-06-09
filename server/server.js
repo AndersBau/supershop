@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './db/db.js'
 import products from './api/products.js';
-
+import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 dotenv.config();
 
 connectDB();
@@ -14,6 +14,10 @@ app.get('/', (req, res, next) => {
 })
 
 app.use('/api/products', products);
+
+app.use(notFound);
+
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 8080
 
