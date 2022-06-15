@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
@@ -10,8 +10,8 @@ const HomeScreen = () => {
 
   useEffect(() => {
     dispatch(listProducts())
-  }, [])
-
+  }, [dispatch])
+  const products = [];
 
   return (
     <>
