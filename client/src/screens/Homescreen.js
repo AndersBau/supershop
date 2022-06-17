@@ -6,6 +6,7 @@ import { listProducts } from '../store/actions/productActions';
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
+
   const productList = useSelector(state => state.productList);
   const { loading, error, products } = productList;
 
@@ -16,7 +17,9 @@ const HomeScreen = () => {
   return (
     <>
       <h1>Newest Products</h1>
-      {loading ? <h2>Loading...</h2> : error ? (
+      {loading ? (
+      <h2>Loading...</h2>
+      ): error ? (
         <h3>{error}</h3>
       ) : (
       <Row>
