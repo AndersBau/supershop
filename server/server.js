@@ -19,6 +19,6 @@ app.use(notFound);
 
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 3124
 
 app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`))
