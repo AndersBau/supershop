@@ -14,9 +14,10 @@ import {
 
       const { data } = await axios.get('/api/products');
 
+       // this part is not trigering on my redux debuger
       dispatch({
         type: PRODUCT_LIST_SUCCESS,
-        // payload: data
+        payload: data
       })
 
     } catch (error) {
