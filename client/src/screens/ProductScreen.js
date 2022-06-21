@@ -2,11 +2,8 @@ import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Card, Button, ListGroupItem } from "react-bootstrap";
 import Rating from "../components/Rating";
-// import products from "../products";
 import axios from "axios";
 const ProductScreen = ()=> {
-  // const params = useParams();
-  // const product = products.find(p => p._id === params.id);
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
@@ -15,7 +12,7 @@ const ProductScreen = ()=> {
       setProduct(response.data);
     }
     fetchProduct();
-  }, [])
+  }, [product._id])
   return (
     <>
       <Link className='btn btn-light my-3' to='/'>
